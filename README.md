@@ -8,6 +8,13 @@
     
  温度・湿度2センサー(DHT11)を装着したRaspberryPi側で動作し、検知された温度・湿度を指定のURLに投稿します。
 
+# ハードウェア
+  
+以下の図のように結線します。
+
+![DHT11結線図](https://github.com/tt-hasegawa/mmsensor_hygro/blob/master/pin-connect_dht11.png)
+ 
+
 # 導入方法
   
 RaspberryPi上で以下を実行します。
