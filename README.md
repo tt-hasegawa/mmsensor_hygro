@@ -48,7 +48,7 @@ crontab -l
 ``` 
  有無を確認する行
 ```
-@reboot /bin/sh /home/pi/mmsensor_hygro/hygro-sensor.sh
+@reboot /bin/sh /home/pi/mmsensor_hygro/hygrometer.sh
 ```
  登録が無ければ、以下のコマンドでcronの編集モードに入り、追記する。
 ```
@@ -56,7 +56,7 @@ crontab -e
 ```
 末尾に以下を追記する。
 ```
-@reboot /bin/sh /home/pi/mmsensor_hygro/hygro-sensor.sh
+@reboot /bin/sh /home/pi/mmsensor_hygro/hygrometer.sh
 ```
 
 # 再起動する。
