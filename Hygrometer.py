@@ -29,6 +29,8 @@ GPIO.setmode(GPIO.BCM)
 # read data using pin 4
 instance = dht11.DHT11(pin=4)
  
+time.sleep(10)
+
 logging.info("Hygrometer Initialized.")
 
 try:
@@ -41,19 +43,19 @@ try:
             temperature=result.temperature
             humidity=result.humidity
 
-        logging.info("Check Temperature:{} Humidity:{}.".format(temperature,humidity))
+            logging.info("Check Temperature:{} Humidity:{}.".format(temperature,humidity))
 
-        uploadData={
-                'temperature':str(temperature),
-                'humidity':str(humidity)
-        }
-        logging.info(uploadData)
-        try:
-            logging.info("POST Start.{}")
-            response = requests.post(url + '/addHygrometer/' , json=uploadData, proxies=proxies)
-            logging.info("POST End. {}".format(response.text))
-        except Exception as e:
-            logging.info(e)
+            uploadData={
+                    'temperature':str(temperature),
+                    'humidity':str(humidity)
+            }
+            logging.info(uploadData)
+            try:
+                logging.info("POST Start.{}")
+                response = requests.post(url + '/addHygrometer/' , json=uploadData, proxies=proxies)
+                logging.info("POST End. {}".format(response.text))
+            except Exception as e:
+                logging.info(e)
         time.sleep(10)
 
 except KeyboardInterrupt:
